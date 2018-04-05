@@ -14,7 +14,8 @@ public class Demo extends androidSetup {
 	
 	@Test
 	public void visitHomePage() throws MalformedURLException {
-		driver = androidSetup.openBrowser("http://www.terra.com.br", "Android Device");
+		driver = androidSetup.openBrowser("https://www.phptravels.net", "Android Device");
+		System.out.println("Fim do teste");
 		driver.quit();
 	}
 	
