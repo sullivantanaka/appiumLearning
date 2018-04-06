@@ -14,7 +14,7 @@ public class androidSetup {
 	/*
 	 *  OpenBrowser
 	 *  
-	 *  Este método recebe como parâmetros a url que se deseja abrir e o nome do dispositivo android
+	 *  Este m?todo recebe como par?metros a url que se deseja abrir e o nome do dispositivo android
 	 *  
 	 */
 	public static AndroidDriver<AndroidElement> openBrowser(String url, String deviceName) throws MalformedURLException {
@@ -23,7 +23,7 @@ public class androidSetup {
 		}
 
 		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "deviceName"); //TO-DO: trocar para variável depois
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "deviceName"); //TO-DO: trocar para vari?vel depois
 		cap.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
 		AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		driver.manage().timeouts().implicitlyWait(10,  TimeUnit.SECONDS);
