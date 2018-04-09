@@ -17,10 +17,10 @@ public class topNavBar {
 	WebDriver driver;
 	
 	// definindo os locators
-	By homeButton    = By.cssSelector("a.navbar-brand:nth-child(1)");
-	By hotelButton   = By.cssSelector("li.main-lnk:nth-child(1) > a:nth-child(1)");
-	By flightsButton = By.cssSelector("li.main-lnk:nth-child(2) > a:nth-child(1)");
-	By toursButton   = By.cssSelector("li.main-lnk:nth-child(3) > a:nth-child(1)");
+	By homeButton    = By.cssSelector("body > div.navbar.navbar-static-top.navbar-default.hidden-lg.hidden-md > div > div > div.navbar-header > a > img");
+	By hotelButton   = By.cssSelector("#body-section > div.herobg > div > div > div.col-md-5.col-xs-12.go-right > div > ul > li.active > a");       //trocar para xpath ??????
+	By flightsButton = By.cssSelector("#body-section > div.herobg > div > div > div.col-md-5.col-xs-12.go-right > div > ul > li:nth-child(2) > a");
+	By toursButton   = By.cssSelector("#body-section > div.herobg > div > div > div.col-md-5.col-xs-12.go-right > div > ul > li:nth-child(3) > a");
 	By carsButton    = By.cssSelector("li.main-lnk:nth-child(4) > a:nth-child(1)");
 	By offersButton  = By.cssSelector("li.main-lnk:nth-child(5) > a:nth-child(1)");
 	By visaButton    = By.cssSelector("li.main-lnk:nth-child(6) > a:nth-child(1)");

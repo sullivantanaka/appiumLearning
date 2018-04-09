@@ -3,30 +3,34 @@
  */
 package Tests;
 
-import com.phpTravel.Pages.topNavBar;
-import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Setup.androidSetup;
+
+import Pages.topNavBar;
+import Pages.hotelsPage;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
 
 /**
  * @author tanakasu
  *
  * Estes testes verificam a navegação básica dos botões do menu superior
- * 
+ *
  */
-public class VerifyHomePage {
-
+public class VerifyHomePage extends androidSetup {
+	AndroidDriver<AndroidElement> driver;
 	String baseUrl = "https://www.phptravels.net";
-	WebDriver driver = new ChromeDriver();
-	
-	@Before
+
+	@BeforeTest
 	public void setUp() throws Exception {
-	    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get(baseUrl);
+		driver = androidSetup.openBrowser(baseUrl,"Android Device");
 	}
 	
-	@After
+	@AfterTest
 	public void tearDown() {
 		System.out.println("Fim do Teste");
 		//driver.quit();
@@ -39,13 +43,12 @@ public class VerifyHomePage {
 		topNavBar.clickHotelButton();
 		topNavBar.clickFlightsButton();
 		topNavBar.clickToursButton();
-		topNavBar.clickCarsButton();
-		topNavBar.clickOffersButton();
-		topNavBar.clickVisaButton();
-		topNavBar.clickBlogButton();
-		topNavBar.clickHomeButton();
-		//topNavBar.
-		
+		//topNavBar.clickCarsButton();
+		//topNavBar.clickOffersButton();
+		//topNavBar.clickVisaButton();
+		//topNavBar.clickBlogButton();
+		//topNavBar.clickHomeButton();
+
 	}
 	
 } //verifyHompePage

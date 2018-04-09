@@ -1,16 +1,19 @@
 package Tests;
 
-import com.phpTravel.Pages.*;
-import org.junit.*;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Test;
+import org.testng.asserts.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertTrue;
 
 
 public class verifyHotelsPage {
@@ -22,14 +25,14 @@ public class verifyHotelsPage {
 	topNavBar topNavBar = new topNavBar(driver);
 	hotelsPage hotelsPage = new hotelsPage(driver);
 	
-	@Before
+	@BeforeTest
 	public void setUp() throws Exception {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		//driver.manage().window().maximize();
 		driver.get(baseUrl);
 	}
 	
-	@After
+	@AfterTest
 	public void tearDown() {
 		System.out.println("Fim do Teste");
 		driver.quit();
@@ -37,16 +40,18 @@ public class verifyHotelsPage {
 	
 ////////////////////////////////////////////////////////////////////////////////////////
 	
-@Ignore	@Test //este teste valida a exibição do mapa
+@Ignore
+@Test //este teste valida a exibição do mapa
 	public void verifyMap() {
 		topNavBar.clickHotelButton();
 		hotelsPage.clickViewMapBtn();
-		assertTrue(hotelsPage.mapVisible());
+		//assertTrue(hotelsPage.mapVisible());  //TO-DO: encontrar método na classe TestNG
 	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////
 	
-@Ignore	@Test //este teste valida que os valores de checkin = hoje e checkout = amanhã
+@Ignore
+@Test //este teste valida que os valores de checkin = hoje e checkout = amanhã
 	public void verifyFilterbyDefaultDate() {
 		
 		//obtendo as datas de hoje e amanhã
